@@ -1,2 +1,2 @@
 # AWS-Log-to-RDS-S3
-![](images/log-collecting-archi.png)
+![](images/log-collecting.png)
