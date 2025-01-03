@@ -1,4 +1,6 @@
 # AWS-Log-to-RDS-S3
+ This project involves hands-on AWS cloud implementation to enhance skills as a data engineer. The implementation stores user log data in a database table and saves it as CSV files in Amazon S3.
+
 
 ![](images/data-collect.png)
 
@@ -29,11 +31,10 @@ amazonaws.com/dev/v2/{stream-name}
 
 - Processes data streams in real-time from Amazon Kinesis Data Streams. In this hands-on implementation, Lambda functions insert logs into a table in Amazon RDS.
     - Please refer to `lambda/lambda_function.py`
+## Data Store:
 
-## **Amazon RDS**
--  Structured data is stored in a relational database using a defined schema.
-## **Amazon S3**
-- Raw or unstructured data is stored for long-term use or further processing.
+- **Amazon RDS**: Used to store user logs in a structured format. It's ideal for querying specific log details efficiently using SQL.
+- **Amazon S3**: Acts as a repository for raw log data in CSV format, making it accessible for batch processing, archiving, and analytics.
 
 
 # More Details
