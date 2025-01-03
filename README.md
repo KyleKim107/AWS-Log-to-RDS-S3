@@ -12,12 +12,15 @@
 
 - **Amazon API Gateway**: Acts as the entry point for incoming requests (e.g., HTTP POST). It ensures secure and efficient communication between the clients and the backend.
   - The target for the API's endpoint is the name of Amazon Kinesis Data Streams.
+```
+amazonaws.com/dev/v2/{stream-name}
+```
 
 ## Amazon Kinesis Data Streams:
 
 - Handles real-time ingestion of the data. This component is useful for streaming large volumes of data with low latency.
 - Creates topics as types of client.
-
+![](images/kinesis-list.png)
 ## Amazon Kinesis Data Firehose:
 
 - Takes data from Kinesis Data Streams and prepares it for delivery to S3.
@@ -27,31 +30,45 @@
 - Processes data streams in real-time from Amazon Kinesis Data Streams. In this hands-on implementation, Lambda functions insert logs into a table in Amazon RDS.
     - Please refer to `lambda/lambda_function.py`
 
-
 ## **Amazon RDS**
 -  Structured data is stored in a relational database using a defined schema.
 ## **Amazon S3**
 - Raw or unstructured data is stored for long-term use or further processing.
 
-Api Gateway template
 
+# More Details
+
+### RDS table schema
+```sql
+-- Create a user
+CREATE USER 'pipeline'@'%' IDENTIFIED BY 'XXX#';
+
+-- Create a database
+CREATE DATABASE pipelinedb CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+-- Grant privileges to the user on the database
+GRANT ALL PRIVILEGES ON pipelinedb.* TO 'pipeline'@'%';
+
+-- Note the endpoint (For your reference)
+
+-- Save data from filtering
+-- Create a table
+CREATE TABLE channel_marketing_tb (
+    serviceType VARCHAR(50) NULL,
+    gtmLongTime VARCHAR(200) NULL,
+    base_dt VARCHAR(200) NULL,
+    channel_name VARCHAR(200) NULL,
+    conversion_name VARCHAR(200) NULL,
+    platform VARCHAR(200) NULL,
+    user_type VARCHAR(200) NULL
+);
 ```
-#set ( $enter = "
-")
-#set($json = "$input.json('$')$enter")
-{
-"Data": "$util.base64Encode("$json")",
-"PartitionKey": "$input.params('X-Amzn-Trace-Id')",
-"StreamName": "$input.params('stream-name')"
-}
-```
 
-![](images/api-gateway-url.png)
-
-how to run
+## How to run streamlit
 
 ```
 streamlit run event_click_log.py
 ```
+- UI of client
 
 ![](images/streamlit_log_generator.png)
