@@ -1,6 +1,6 @@
 # AWS-Log-to-RDS-S3
 
-![](images/log-collect.png)
+![](images/data-collect.png)
 
 ## Clients:
 
@@ -22,10 +22,16 @@
 
 - Takes data from Kinesis Data Streams and prepares it for delivery to S3.
 
-## Sink Data:
+## AWS Lambda:
 
-- **Amazon RDS**: Structured data is stored in a relational database using a defined schema.
-- **Amazon S3**: Raw or unstructured data is stored for long-term use or further processing.
+- Processes data streams in real-time from Amazon Kinesis Data Streams. In this hands-on implementation, Lambda functions insert logs into a table in Amazon RDS.
+    - Please refer to `lambda/lambda_function.py`
+
+
+## **Amazon RDS**
+-  Structured data is stored in a relational database using a defined schema.
+## **Amazon S3**
+- Raw or unstructured data is stored for long-term use or further processing.
 
 Api Gateway template
 
