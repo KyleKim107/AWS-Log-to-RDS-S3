@@ -73,3 +73,8 @@ streamlit run event_click_log.py
 - UI of client
 
 ![](images/streamlit_log_generator.png)
+
+## Storing S3 applog
+- Logs are categorized by date and time such like `2024/12/30/00`(year/month/date/hour)
+
+![](images/s3-applog.png)
