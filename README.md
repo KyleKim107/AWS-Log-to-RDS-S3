@@ -1,8 +1,10 @@
 # AWS-Log-to-RDS-S3
  This project involves hands-on AWS cloud implementation to enhance skills as a data engineer. The implementation stores user log data in a database table and saves it as CSV files in Amazon S3.
 
-
-![](images/data-collect.png)
+### Part. 1
+![](images/data-collection.png)
+### Part. 2
+![](images/transform.png)
 
 ## Clients:
 
@@ -75,6 +77,5 @@ streamlit run event_click_log.py
 ![](images/streamlit_log_generator.png)
 
 ## Storing S3 applog
-- Logs are categorized by date and time such like `2024/12/30/00`(year/month/date/hour)
-
+- Logs are categorized by date and time such like `2024/12/30/00`(year/month/date/hour)Modi
 ![](images/s3-applog.png)
