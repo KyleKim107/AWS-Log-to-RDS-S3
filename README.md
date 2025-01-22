@@ -2,9 +2,8 @@
  This project involves hands-on AWS cloud implementation to enhance skills as a data engineer. The implementation stores user log data in a database table and saves it as CSV files in Amazon S3.
 
 ### Part. 1
-![](images/data-collection.png)
-### Part. 2
-![](images/transform.png)
+![](images/data-collect.png)
+
 
 ## Clients:
 
